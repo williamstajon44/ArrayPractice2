@@ -1,0 +1,45 @@
+
+public class SearchArray2Sorted
+{
+    public static void main(String[] args)
+    {
+        int [ ] y = { 123, 255, 776, 331, 380, 409, 515};
+        
+        boolean done = false;
+        boolean found = false;
+        
+        int searchFor = 320;
+
+        int j = 0;
+        
+        while(!done)
+        {
+            if (j >= y.length)    // ran out of array
+            {
+                done = true;
+            }
+            else if (y[j] == searchFor)   // found it
+            {
+                found = true;
+                done = true;
+            }
+            else if (y[j] > searchFor)   // looking at larger value
+            {
+                done = true;
+            }
+            else        // keep looking
+            {
+                j++;
+            }   
+        }
+        
+        if (found)
+        {
+            System.out.println("Found " + searchFor + " at index " + j);
+        }
+        else
+        {
+            System.out.println(searchFor + " not found");
+        }
+    }   
+}
